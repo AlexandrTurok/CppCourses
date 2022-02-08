@@ -2,7 +2,7 @@
 #include <vector>
 #include <algorithm>
 
-std::vector<int> vec{5, 2, 6, 8, 1, 3, 4, 0};
+std::vector<int> vec{2, 5, 6, 8, 1, 3, 4, 0};
 
 int main()
 {
@@ -14,9 +14,9 @@ int main()
 
     // Lambda for sort and cout iterations
 
-    auto sort = [](int a, int b)-> bool 
+    int count = 0;
+    auto sort = [&count](int a, int b)-> bool 
     { 
-        static int count = 0;
         ++ count;
         return a < b;
     };
@@ -24,6 +24,7 @@ int main()
     std::sort(vec.begin(), vec.end(), sort);
     std::for_each(vec.begin(), vec.end(), print);
     std::cout << std::endl;
+    std::cout << "Iterations: " << count << std::endl;
 
     return 0;
 }
