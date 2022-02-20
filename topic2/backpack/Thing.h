@@ -14,10 +14,12 @@ public:
     int getWeight() const;
     int getCost() const;
     std::string getName() const;
+    friend std::ostream& operator<<(std::ostream& os, Thing const& thing);
+
 };
 
 
-//std::ostream& operator<<(std::ostream& out,  Thing& thing);
+
 
 
 #endif

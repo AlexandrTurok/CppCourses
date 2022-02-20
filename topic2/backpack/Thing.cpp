@@ -1,4 +1,5 @@
 #include "Thing.h"
+#include <iostream>
 
 Thing::Thing(std::string name, int weight, int cost): name(name), weight(weight), cost(cost)
 {
@@ -23,14 +24,15 @@ Thing::~Thing()
 {
 }
 
-/*
-std::ostream& operator<<(std::ostream& os, const Thing& thing)
-{
+
+std::ostream& operator<<(std::ostream& os,  Thing const& thing)
+    {
+        
     os << thing.getName();
     os << ": weight=";
     os << thing.getWeight();
     os << " cost=";
     os << thing.getCost();
     return  os; 
-}
-*/
+
+    }

@@ -1,70 +1,7 @@
-#include <string>
 #include <vector>
-#include <iostream>
 #include <algorithm>
-#include <iomanip>
+#include "Backpack.h"
 #include "Thing.h"
-
-class Backpack
-{
-private:
-    int maxW;
-    int totalWeight;
-    int totalCost;
-    std::vector<Thing> things;
-public:
-    Backpack(int maxW);
-    ~Backpack();
-    bool addThing(Thing& thing);
-    void removeThing(Thing thing);
-    std::vector<Thing> getAllThings() const;
-    void showThings() const;
-};
-
-Backpack::Backpack(int maxW): maxW(maxW)
-{
-    totalCost = 0;
-    totalWeight = 0;
-}
-
-bool Backpack::addThing(Thing& thing)
-{
-    if (thing.getWeight() + totalWeight > maxW) {
-        return false;
-    }
-    things.push_back(thing);
-    totalWeight += thing.getWeight();
-    totalCost += thing.getCost();
-    return true;
-}
-
-void Backpack::showThings() const
-{
-    for(auto& val: things)
-    {
-        std::cout << std::setw(10);
-        std::cout << val.getName();
-        std::cout << ": weight= ";
-        std::cout << std::setw(2);
-        std::cout << val.getWeight();
-        std::cout << "     cost= ";
-        std::cout << val.getCost();
-        std::cout << '\n';
-    }
-    std::cout << "Total cost= " << totalCost << '\n';
-    std::cout << "Total weight= " << totalWeight << '\n';
-}
-
-std::vector<Thing> Backpack::getAllThings() const
-{
-    return things;
-}
-
-
-Backpack::~Backpack()
-{
-}
-
 
 int main ()
 {
@@ -91,6 +28,7 @@ int main ()
                             Thing{"J", 30, 20}
                             };
     
+    // Sorting things by price-to-weight ratio
     std::sort(box.begin(), box.end(), [](Thing a, Thing b){return static_cast<double>(a.getCost())/static_cast<double>(a.getWeight()) > static_cast<double>(b.getCost())/static_cast<double>(b.getWeight());});
     
     // Add things from the box to the backpack
