@@ -32,7 +32,7 @@ public:
 
     friend std::ostream& operator<< (std::ostream& out, Int const& I);
     friend std::ostream& operator>> (std::ostream& in, Int const& I);
-    friend Int operator+ (Int& rv, Int& lv);
+    friend Int operator+ (Int rv, const Int& lv);
 
 };
 

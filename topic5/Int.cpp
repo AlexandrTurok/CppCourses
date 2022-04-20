@@ -20,10 +20,10 @@ Int& Int::operator= (Int const& I)
     return *this;
 }
 
-Int operator+ (Int& rv, Int& lv)
+Int operator+ (Int lv, const Int& rv)
 {
-    Int res = lv.a + rv.a;
-    return res;
+    lv.a += rv.a;
+    return lv;
 }
 
 Int& Int::operator- (const Int& I)
