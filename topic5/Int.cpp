@@ -25,44 +25,20 @@ Int operator+ (Int lv, const Int& rv)
     lv.a += rv.a;
     return lv;
 }
-
-Int& Int::operator- (const Int& I)
+Int operator- (Int lv, const Int& rv)
 {
-    a -= I.a;
-    return *this;
-}
-Int& Int::operator* (const Int& I)
-{
-    a *= I.a;
-    return *this;
-}
-Int& Int::operator/ (const Int& I)
-{
-    a /= I.a;
-    return *this;
+    lv.a -= rv.a;
+    return lv;
 }
 
-Int& Int::operator+ (const int& i)
+Int operator* (Int lv, const Int& rv)
 {
-    a += i;
-    return *this;
+    lv.a *= rv.a;
+    return lv;
 }
 
-Int& Int::operator- (const int& i)
+Int operator/ (Int lv, const Int& rv)
 {
-    a -= i;
-    return *this;
+    lv.a /= rv.a;
+    return lv;
 }
-
-Int& Int::operator* (const int& i)
-{
-    a *= i;
-    return *this;
-}
-
-Int& Int::operator/ (const int& i)
-{
-    a /= i;
-    return *this;
-}
-

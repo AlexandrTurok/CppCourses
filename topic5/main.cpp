@@ -4,24 +4,30 @@
 
 int main()
 {
-    Int a(1);
-    Int b = a;
+    Int a(10);
+    std::cout << "After initialisation a=" << a << '\n';
+    Int b(a);
+    std::cout << "b(a);      b=" << b << '\n';
 
-    a = 9;
-
-    Int c = a + b;
+    Int c;
+    c = a + b;
+    std::cout << "c = a + b; c=" << c << '\n';
     c = a - b;
+    std::cout << "c = a - b; c=" << c << '\n';
     c = a * b;
-    c = a / b;
+    std::cout << "c = a * b; c=" << c << '\n';
+    c = a / b;     
+    std::cout << "c = a / b; c=" << c << '\n';
     c = a + 2;
+    std::cout << "c = a + 2; c=" << c << '\n';
     c = a - 1;
-    c = c / 2;
-    c = c * 2;
+    std::cout << "c = a - 1; c=" << c << '\n';
+    c = a / 2;
+    std::cout << "c = a / 2; c=" << c << '\n';
+    c = a * 2;
+    std::cout << "c = a * 2; c=" << c << '\n';
 
 
-
-    std::cout << a << std::endl;
-    std::cout << b << std::endl;
 
     return 0;
 }

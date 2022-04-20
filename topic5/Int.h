@@ -19,20 +19,12 @@ public:
     Int& operator= (const Int& I);
     Int& operator= (const int& i);
 
-//    Int& operator+ (const Int& I);
-
-    Int& operator- (const Int& I);
-    Int& operator* (const Int& I);
-    Int& operator/ (const Int& I);
-
-    Int& operator+ (const int&);
-    Int& operator- (const int&);
-    Int& operator* (const int&);
-    Int& operator/ (const int&);
-
     friend std::ostream& operator<< (std::ostream& out, Int const& I);
     friend std::ostream& operator>> (std::ostream& in, Int const& I);
     friend Int operator+ (Int rv, const Int& lv);
+    friend Int operator- (Int rv, const Int& lv);
+    friend Int operator* (Int rv, const Int& lv);
+    friend Int operator/ (Int rv, const Int& lv);
 
 };
 
