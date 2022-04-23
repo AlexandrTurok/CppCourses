@@ -13,6 +13,7 @@ public:
     Int():a(0){};
     Int(int a);
     Int(Int& a);
+    Int(const Int& a);
     
     int get() const {return a;}
     
@@ -25,6 +26,10 @@ public:
     friend Int operator- (Int rv, const Int& lv);
     friend Int operator* (Int rv, const Int& lv);
     friend Int operator/ (Int rv, const Int& lv);
+    friend bool operator< (const Int& lv, const Int& I);
+    friend bool operator> (const Int& lv, const Int& I);
+    friend bool operator== (const Int& lv, const Int& I);
+    friend bool operator!= (const Int& lv, const Int& I);
 
 };
 

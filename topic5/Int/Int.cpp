@@ -2,6 +2,7 @@
 
 Int::Int(int _a): a(_a){}
 Int::Int(Int& I): a(I.a){}
+Int::Int(const Int& I): a(I.a){}
 
 std::ostream& operator<< (std::ostream& out, Int const& I)
 {
@@ -41,4 +42,24 @@ Int operator/ (Int lv, const Int& rv)
 {
     lv.a /= rv.a;
     return lv;
+}
+
+bool operator< (const Int& lv, const Int& rv)
+{
+    return lv.a < rv.a;
+}
+
+bool operator> (const Int& lv, const Int& rv)
+{
+    return lv.a > rv.a;
+}
+
+bool operator== (const Int& lv, const Int& rv)
+{
+    return lv.a == rv.a;
+}
+
+bool operator!= (const Int& lv, const Int& rv)
+{
+    return lv.a != rv.a;
 }

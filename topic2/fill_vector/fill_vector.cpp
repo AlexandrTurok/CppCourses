@@ -19,7 +19,7 @@ int main()
     auto half_vec = vec1.begin() + vec1.size()/2;
     std::vector<int> vec2(vec1.size()/2);
     //Fill vec2 with second part of vec1
-    std::copy(half_vec, vec1.end(), vec2.begin());
+    std::copy(half_vec, vec1.end(), vec2.begin());// assign
     show_vector(vec2);
     return 0;
 }

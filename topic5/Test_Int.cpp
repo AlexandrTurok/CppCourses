@@ -10,6 +10,8 @@ int main()
     std::cout << "b(a);      b=" << b << '\n';
 
     Int c;
+    c = 1;
+    std::cout << "c = 1: " << c << '\n';
     c = a + b;
     std::cout << "c = a + b; c=" << c << '\n';
     c = a - b;
@@ -27,7 +29,7 @@ int main()
     c = a * 2;
     std::cout << "c = a * 2; c=" << c << '\n';
 
-
+    std::cout << "(b < c) = " << (b < c) << '\n';
 
     return 0;
 }
